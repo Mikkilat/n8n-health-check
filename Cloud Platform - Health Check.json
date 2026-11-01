@@ -1,0 +1,65 @@
+{
+  "name": "Cloud Platform - Health Check",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "health-check",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "78e6ba02-3720-47be-a567-863a5020f506",
+      "name": "Webhook",
+      "webhookId": "ffd785d0-b40d-40f6-bfa1-ddd97da75ba4"
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "{\n  \"status\": \"ok\",\n  \"message\": \"n8n is running\",\n  \"service\": \"cloud-platform-test\"\n}",
+        "options": {
+          "responseCode": 200
+        }
+      },
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5,
+      "position": [
+        224,
+        0
+      ],
+      "id": "c62836f4-26fd-4f3b-9d00-307ab08cde55",
+      "name": "Respond to Webhook"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": true
+  },
+  "versionId": "5d8fa7f0-2078-4529-8e4c-b4bd1c33ef48",
+  "meta": {
+    "instanceId": "e0f37bef75e2ac310e8ad02dc303d5614558fe332bd77f648168d1e16e16ada8"
+  },
+  "nodeGroups": [],
+  "id": "IqVrbttyMJLFhYWz",
+  "tags": []
+}
